@@ -19,7 +19,12 @@
             if(
                 totale > 100
             ){
-                this.innerHTML = `Hai il 30% di sconto`;
+                this.innerHTML = `Hai il 30% di sconto <button>REDEEM</button>`;
+                this.querySelector('button').addEventListener("click", (e) => {
+                    if(window.appHistory !== undefined) {
+                        window.appHistory.push('/redeem');
+                    }
+                })
             }else{
                 this.innerHTML = `Non hai nessuno sconto`;
             }
